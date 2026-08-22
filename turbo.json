@@ -1,0 +1,24 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": [".env"],
+  "ui": "tui",
+  "tasks": {
+    "start:build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", ".next/**", "!.next/cache/**"]
+    },
+    "start:dev": {
+      "cache": false,
+      "persistent": true
+    },
+    "start:lint": {
+      "dependsOn": ["^lint"]
+    },
+    "start:typecheck": {
+      "dependsOn": ["^typecheck"]
+    },
+    "db:generate": {
+      "cache": false
+    }
+  }
+}

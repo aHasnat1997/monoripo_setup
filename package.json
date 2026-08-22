@@ -1,0 +1,25 @@
+{
+  "name": "social_media_monoripo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "start:dev": "turbo run start:dev",
+    "start:build": "turbo run start:build",
+    "start:lint": "turbo run start:lint",
+    "start:typecheck": "turbo run start:typecheck",
+    "db:generate": "turbo run db:generate --filter=@social_media_monoripo/db",
+    "db:migrate": "bun run --cwd packages/db migrate"
+  },
+  "devDependencies": {
+    "bun-types": "^1.3.14",
+    "turbo": "2.10.7",
+    "typescript": "^5.7.0"
+  },
+  "packageManager": "bun@1.2.0",
+  "dependencies": {
+    "zod": "^4.4.3"
+  }
+}
